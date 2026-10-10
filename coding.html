@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barangay Resident Information System</title>
+</head>
+<body>
+    <section id="login">
+        <h2>Login</h2>
+        <input id="username" placeholder="Username">
+        <input id="password" type="password" placeholder="Password">
+        <button id="loginBtn">Sign In</button>
+        <button id="logoutBtn" hidden>Log Out</button>
+        <p id="loginMsg"></p>
+    </section>
+
+    <section id="app" hidden>
+        <h2>Residents</h2>
+        <input id="search" placeholder="Search name, ID, or purok">
+        <button id="searchBtn">Search</button>
+        <button id="clearBtn">Clear</button>
+        <button id="newBtn">Add Resident</button>
+        <button id="exportBtn">Export JSON</button>
+    </section>
+
+    <script>
+        function deleteResident(id){
+            el("loginBtn").onclick=()=>{
+                if(el("username").value.trim()==="admin"&&el("password").value==="admin123"){
+                    el("app").hidden=false;el("logoutBtn").hidden=false;el("loginMsg").textContent="Demo login successful.";renderAll();                   
+                } else el("loginMsg").textContent="Incorrect username or password.";
+            };
+        }
+    </script>
+    
+</body>
+</html>
